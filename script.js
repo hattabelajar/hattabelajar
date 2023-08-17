@@ -17,3 +17,19 @@ reset.addEventListener("click", (event) => {
   newScript.setAttribute("src", "script2.js");
   html.append(newScript);
 });
+
+const toastTrigger = document.getElementById("liveToastBtn");
+const toastLiveExample = document.getElementById("liveToast");
+const isiSearch = document.querySelector("#text-melayang");
+
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+  toastTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    const tulisanSearch = document.querySelector("#isi-search");
+    isiSearch.innerHTML = tulisanSearch.value;
+    toastBootstrap.show();
+  });
+}
+console.log(toastTrigger);
+console.log(toastLiveExample);
